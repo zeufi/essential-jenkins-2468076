@@ -6,9 +6,10 @@ The file is text and can be stored and tracked in a version control system with 
 
 `Jenkinsfile` can also be used to define project configuration including tools, options, and triggers.
 
-Storing the Jenkinsfile in repo also allows development teams to use a GitOps approach to development. 
+Storing the Jenkinsfile in repo also allows development teams to use a GitOps approach to development.
 
 ## Use the Default Jenkinsfile for this Repo
+
 - Create a new pipeline job on a Jenkins server.
 - Under `Pipeline`, select `Pipeline script from SCM`.
 - Under `SCM`, select `Git`.
@@ -25,6 +26,6 @@ Storing the Jenkinsfile in repo also allows development teams to use a GitOps ap
 Follow this link to view the [Jenkinsfile in the root of this repo](../../Jenkinsfile).
 
 ## References
+
 - [What is Jenkins Pipeline?](https://www.jenkins.io/doc/book/pipeline/#overview)
 - [What is GitOps?](https://www.cloudbees.com/gitops/what-is-gitops)
-

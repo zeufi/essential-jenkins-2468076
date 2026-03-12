@@ -1,6 +1,8 @@
 # 02_05 Parameterize a pipeline
+
 Parameters are defined in a `parameters` block which is placed at the beginning of the pipeline code.
-```
+
+```Jenkinsfile
 pipeline {
     agent any
     parameters {
@@ -13,15 +15,18 @@ pipeline {
 Parameters are accessed by their name preceded by the  `params` prefix.
 
 If they’re used in a string need to have a dollar sign at the beginning and can also be wrapped in curly braces.
-```
+
+```sh
 params.PARAMETER_NAME
 “${params.PARAMETER_NAME}”
 ```
 
 # Declaring parameters
+
 Each parameter definition must include a name, a default value, and a description that explains the type of value that should be entered.
 
 For pipelines, there are five different types of parameters we can use:
+
 - String
 - Text
 - Boolean
@@ -29,8 +34,10 @@ For pipelines, there are five different types of parameters we can use:
 - Password
 
 # Sample pipeline with parameters
+
 Use the following pipeline script to experiment with parameters.
-```
+
+```Jenkinsfile
 pipeline {
     agent any
     parameters {

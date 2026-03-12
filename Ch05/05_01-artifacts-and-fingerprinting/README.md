@@ -1,19 +1,24 @@
 # 05_01 Artifacts and Fingerprinting
+
 Creating artifacts is a core function of the Jenkins server. Review the following document for more information on configuring a pipeline to create artifacts.  The document also explains fingerprinting which is a method used by Jenkins to track where an artifact was created or used.
+
 - [Core function archiveArtifacts](https://www.jenkins.io/doc/pipeline/steps/core/)
 - [Fingerprinting](https://www.jenkins.io/doc/pipeline/steps/core/#fingerprint-record-fingerprints-of-files-to-track-usage)
 
 The Copy Artifact Plugin allows pipelines to copy artifacts into a job from other projects.
+
 - [Copy Artifact Plugin](https://plugins.jenkins.io/copyartifact/)
 
 *PLEASE INSTALL THE COPY ARTIFACT PLUGIN ON YOUR JENKINS SERVER BEFORE USING THE FOLLOWING PIPELINE SCRIPTS.*
 
 ## Create an artifact in a pipeline
+
 The following pipeline uses a `post` block with an `always` stage.  The stages in the `post` block will run when the pipeline completes.  Any steps inside the `always` stage will run even if the build is unsuccessful.
 
 Given this configuration, the `archiveArtifacts` step will always be run at the end of the pipeline.
 
 - Create a pipeline project named `create-artifact` using the following pipeline:
+
 ```Jenkinsfile
 pipeline {
     agent any
@@ -51,6 +56,7 @@ pipeline {
 ```
 
 ## Read an artifact from another job
+
 - Create a pipeline project named `read-artifact` using the following pipeline:
 
 ```Jenkinsfile

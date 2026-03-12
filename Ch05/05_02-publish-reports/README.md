@@ -1,11 +1,16 @@
 # 05_02 Publish test results and code coverage reports
+
 ## Report formats
+
 ### JUnit test report format
+
 JUnit reports are XML documents that describe the results of a test.  The JUnit format was originally developed for Java programs but many other languages have adopted this reporting format.  This makes JUnit the standard for creating test reports.
+
 - [JUnit](https://junit.org/junit5/)
 
 ### Code coverage formats
-Code coverage measures the effectiveness of a test by tracking the lines of code that are accessed during a test. 
+
+Code coverage measures the effectiveness of a test by tracking the lines of code that are accessed during a test.
 
 Two popular code coverage formats are JaCoCo and Cobertura.
 
@@ -13,12 +18,14 @@ Two popular code coverage formats are JaCoCo and Cobertura.
 - [Cobertura](http://cobertura.github.io/cobertura/)
 
 ## Plugins for reading and publishing reports
+
 Jenkins uses plugins to read and publish a variety of test and code coverage reports.
 
 - [JUnit](https://plugins.jenkins.io/junit/)
 - [Code Coverage API](https://plugins.jenkins.io/code-coverage-api/)
 
 ## Test report and code coverage demo with a Python project
+
 The code in this directory includes a Python project for a simple API.  The code includes a [Jenkinsfile](./Jenkinsfile) for a pipeline with the following stages:
 
 ```mermaid
@@ -30,13 +37,12 @@ flowchart LR
 ```
 
 |Pipeline stage |Function                                               |
-|:--------------|:------------------------------------------------------| 
+|:--------------|:------------------------------------------------------|
 |Requirements   |Sets up a virtual environment and installs dependencies|
 |Lint           |Checks the code for syntax errors                      |
 |Test           |Runs a test suite including code coverage              |
 |Build          |Builds the application                                 |
 |Deploy         |Deploys the application                                |
-
 
 *If you're following along with the exercise files for this lesson, there are a few things that you'll need to know in advance.*
 
@@ -49,7 +55,8 @@ flowchart LR
 - [ ] The Code Coverage API plugin must be installed.
 
 ## The demo Jenkinsfile
-```
+
+```Jenkinsfile
 pipeline {
     agent any
 

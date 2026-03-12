@@ -9,19 +9,24 @@ The `sh()` build step is used to run shell commands on Linux, Unix, and macOS sy
 The `bat()` build step is used to run shell commands on Windows systems.
 
 ## Paths to scripts
+
 Relative paths can be used to reference files from the root of the repo.
-```
+
+```sh
 sh(‘./scripts/build.sh’)
 bat(‘..\scripts\build.bat’)
 ```
 
 Absolute paths can be used to reference files in the workspace or in other locations on the systems where the job is being run.
-```
+
+```sh
 sh(‘/usr/local/bin/build.sh’)
 bat(‘C:\bin\build.bat’)
 ```
+
 The `dir()` build step can be used to change directories for other build steps.
-```
+
+```sh
 dir("${env.WORKSPACE}/environments/test"){
 sh(‘’’
     terraform init
@@ -31,6 +36,7 @@ sh(‘’’
 ```
 
 ## The exercise files
+
 The exercise files for this lesson include a [Jenkinsfile](./Jenkinsfile) and a [script that calculates a Fibonacci sequence](./fibonacci.sh).
 
 - Create a new GitHub repo and add the exercise files.
@@ -40,20 +46,20 @@ The exercise files for this lesson include a [Jenkinsfile](./Jenkinsfile) and a 
 - *NOTE: The `fibonacci.sh` file must be placed in a subdirectory named `scripts` for the pipeline to run successfully.*
 
 - Create a new pipeline project in your Jenkins server.
-    - Select `New Item`
-    - Enter item name (use the same name as your repo if possible)
-    - Select `Pipeline` project
-    - `OK`
-    - Select `GitHub Project` and paste in the repo URL.
-      - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
-    - Under `Build Triggers`, select the checkbox next to `GitHub hook trigger for GITScm polling`.
-    - Under `Pipeline`, select `Pipeline script from SCM`.
-    - Under SCM, select `Git`.
-    - Under `Repository URL`, paste in the repo URL.
-    - Under `Branch Specifier (blank for 'any')`, change `master` to `main`.
-    - `Save` &rarr; `Build Now`.
-    - *NOTE: The project must run at least one successful build before connecting to GitHub.  This allows Jenkins to read the configuration from the repo.*
-    - Copy the URL of your Jenkins server.
+  - Select `New Item`
+  - Enter item name (use the same name as your repo if possible)
+  - Select `Pipeline` project
+  - `OK`
+  - Select `GitHub Project` and paste in the repo URL.
+    - *NOTE: This step is optional.  It only creates a link to the repo on the project home page.*
+  - Under `Build Triggers`, select the checkbox next to `GitHub hook trigger for GITScm polling`.
+  - Under `Pipeline`, select `Pipeline script from SCM`.
+  - Under SCM, select `Git`.
+  - Under `Repository URL`, paste in the repo URL.
+  - Under `Branch Specifier (blank for 'any')`, change `master` to `main`.
+  - `Save` &rarr; `Build Now`.
+  - *NOTE: The project must run at least one successful build before connecting to GitHub.  This allows Jenkins to read the configuration from the repo.*
+  - Copy the URL of your Jenkins server.
 
 - Go back to the GitHub repo and configure the settings to create a webhook for the project you just created.
   - Select `Settings` &rarr; `Webhooks` &rarr; `Add webhook`.

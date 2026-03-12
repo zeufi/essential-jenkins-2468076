@@ -1,4 +1,5 @@
 # 05_04 Challenge Create artifacts and reports
+
 You’re on a development team working on a new Java application.
 
 You've been assigned to develop a Jenkins pipeline that tests the application code and creates a report that the team can review.  Specifically, the test stage creates  test report using the JUnit format.
@@ -6,6 +7,7 @@ You've been assigned to develop a Jenkins pipeline that tests the application co
 If the tests pass, the pipeline should compile the code into a Java archive and store the JAR file as an artifact.
 
 ## Requirements
+
 - Set up a global tool configuration for Maven.
 
 - Make sure the JUnit plugin is installed.
@@ -19,16 +21,18 @@ If the tests pass, the pipeline should compile the code into a Java archive and 
 - Archive artifacts from the following location: `'**/hello-1.0-SNAPSHOT.jar'`.
 
 ## Additional information
+
 - A pipeline template and all supporting code are available in the exercise files.
 
 - Use the pipeline syntax tool to generate snippets for:
-    - Tool configuration
-    - Collecting test results
-    - Archiving artifacts
+  - Tool configuration
+  - Collecting test results
+  - Archiving artifacts
 
 - This challenge should take about 15 to 20 minutes to complete.
 
 ## The pipeline template
+
 [Follow this link for the Jenkinsfile template](./Jenkinsfile) or view it below:
 
 ```Jenkinsfile

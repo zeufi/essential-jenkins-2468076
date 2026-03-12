@@ -1,4 +1,5 @@
 # 03_04 Add a status badge
+
 Status Badges are dynamically generated images that communicate whether a build is passing or failing.
 
 Following is an example status badge for a passing build:
@@ -10,6 +11,7 @@ Typically, status badges are placed in the README file for a GitHub repository. 
 To enable status badges, your Jenkins server must have the [Embeddable Build Status Plugin](https://plugins.jenkins.io/embeddable-build-status/) installed.
 
 ## Add a status badge to a GitHub repo's README.md file
+
 - Install the `Embeddable Build Status Plugin`.
   - In your Jenkins server, Select `Manage Jenkins` &rarr; `Manage Plugins`.
   - Select the `Available` tab.
@@ -25,9 +27,8 @@ To enable status badges, your Jenkins server must have the [Embeddable Build Sta
   - Locate the `Markdown` section and copy the code snippet under `unprotected`.
 
 - Add the build status badge to a GitHub repo's README file.
-  - Create a new GitHub repo or use one from a previous lesson. 
+  - Create a new GitHub repo or use one from a previous lesson.
   - Edit the `README.md` file in the repo associated with the job that provided the build status snippet.
   - Paste the snippet at the top of the file.
   - Commit the file.
   - Confirm that the status badge appears in the file.
-
